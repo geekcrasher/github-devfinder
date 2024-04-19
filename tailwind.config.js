@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        "space-mono": ["Space Mono, sans-serif"]
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
