@@ -2,7 +2,7 @@ import axios from "axios"
 
 const githubToken = import.meta.env.VITE_GITHUB_ACCESS_TOKEN
 
-export const githubUser = async (username: string) => {
+export const githubUserData = async (username: string) => {
   try {
     const response = await axios.get(`https://api.github.com/users/${username}`, {
       headers: {
