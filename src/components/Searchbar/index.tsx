@@ -29,8 +29,9 @@ const Searchbar = () => {
     }
   })
 
-  const onSubmit = (value: z.infer<typeof formSchema>) => {
+  const onSubmit = (value: z.infer<typeof formSchema>): void => {
     setSearchUser(value?.username)
+    form.reset()
   }
 
   return (
@@ -48,11 +49,10 @@ const Searchbar = () => {
                     <Input
                       {...field}
                       placeholder="Search GitHub username..."
-                      className="bg-transparent h-10 border-0 text-base placeholder:text-slate-300"
+                      className="bg-transparent h-10 border-0 text-sm xl:text-[0.95rem] placeholder:text-slate-400"
                       autoComplete="off"
                     />
                   </FormControl>
-                  {/* <FormMessage /> */}
                 </FormItem>
               )}
             />
