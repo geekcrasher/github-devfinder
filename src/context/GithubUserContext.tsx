@@ -5,20 +5,35 @@ type GitHubUserContextProviderProps = {
   children: React.ReactNode
 }
 
-type GitHubUserContextType<T> = {
-  gitHubUser: T,
+type GithubUser = {
+  login: string,
+  name: string,
+  avatar_url?: string,
+  bio?: string,
+  created_at: string,
+  public_repos?: number,
+  followers?: number,
+  following?: number,
+  location?: string,
+  company?: string,
+  twitter_username?: string,
+  blog?: string
+}
+
+type GitHubUserContextType = {
+  gitHubUser: GithubUser,
   setSearchUser: React.Dispatch<React.SetStateAction<string>>
 }
 
-const GitHubUserContext = createContext<GitHubUserContextType<unknown> | null>(null)
+const GitHubUserContext = createContext<GitHubUserContextType | null>(null)
 
-export const useGitHubUser = <T,>() => {
-  return useContext(GitHubUserContext) as GitHubUserContextType<T>
+export const useGitHubUser = () => {
+  return useContext(GitHubUserContext) as GitHubUserContextType
 }
 
 export const GithubUserProvider = ({ children }: GitHubUserContextProviderProps) => {
 
-  const [gitHubUser, setGitHubUser] = useState<unknown | null>(null)
+  const [gitHubUser, setGitHubUser] = useState<GithubUser | null>(null)
   const [searchUser, setSearchUser] = useState("octocat")
 
   useEffect(() => {
