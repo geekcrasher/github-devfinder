@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 import { githubUserData } from "@/api";
+import { toast } from "sonner"
 
 type GitHubUserContextProviderProps = {
   children: React.ReactNode
@@ -43,6 +44,12 @@ export const GithubUserProvider = ({ children }: GitHubUserContextProviderProps)
         setGitHubUser(response)
       } catch (error) {
         console.log(error)
+        toast("Github user not found", {
+          action: {
+            label: "Try again",
+            onClick: () => console.log("Try again"),
+          },
+        })
       }
     }
 
