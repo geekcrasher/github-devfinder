@@ -18,7 +18,8 @@ type GithubUser = {
   location?: string,
   company?: string,
   twitter_username?: string,
-  blog?: string
+  blog?: string,
+  html_url: string,
 }
 
 type GitHubUserContextType = {
