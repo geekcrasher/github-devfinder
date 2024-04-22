@@ -37,9 +37,9 @@ const Searchbar = () => {
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 bg-[#1e2a47] rounded-lg p-2">
-          <div className="flex justify-around items-center gap-4 w-full h-10">
-            <Search color="#0079ff" size={28} className="ml-6" />
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 bg-white dark:bg-[#1e2a47] shadow-lg rounded-lg p-2">
+          <div className="flex justify-around items-center gap-2 w-full h-10">
+            <Search color="#0079ff" className="ml-2 sm:ml-6 h-6 w-6" />
             <FormField
               control={form.control}
               name="username"
@@ -49,7 +49,7 @@ const Searchbar = () => {
                     <Input
                       {...field}
                       placeholder="Search GitHub username..."
-                      className="bg-transparent h-10 border-0 text-sm xl:text-[0.95rem] placeholder:text-slate-400"
+                      className="bg-transparent h-10 border-0 text-sm xl:text-[0.95rem] text-slate-700 dark:text-[#f5f7ff] placeholder:text-slate-400 dark:placeholder:text-slate-300"
                       autoComplete="off"
                     />
                   </FormControl>
