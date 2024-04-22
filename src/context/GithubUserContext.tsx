@@ -9,21 +9,21 @@ type GitHubUserContextProviderProps = {
 type GithubUser = {
   login: string;
   name: string;
-  avatar_url?: string;
+  avatar_url: string;
   bio?: string;
   created_at: string;
-  public_repos?: number;
-  followers?: number;
-  following?: number;
-  location?: string;
-  company?: string;
+  public_repos: number;
+  followers: number;
+  following: number;
+  location: string;
+  company: string;
   twitter_username?: string;
   blog?: string;
   html_url: string;
 };
 
 type GitHubUserContextType = {
-  gitHubUser: GithubUser | null; // Allow null for gitHubUser
+  gitHubUser: GithubUser | null
   setSearchUser: React.Dispatch<React.SetStateAction<string>>;
 };
 

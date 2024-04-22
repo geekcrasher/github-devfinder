@@ -12,13 +12,13 @@ const GithubProfileCard = () => {
 
   const { gitHubUser } = useGitHubUser()
 
-  const date = new Date(gitHubUser?.created_at)
+  const date = gitHubUser ? new Date(gitHubUser.created_at) : null;
 
-  const formatedDate = date.toLocaleDateString('en-GB', {
+  const formatedDate = date ? date.toLocaleDateString('en-GB', {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
-  });
+  }) : null;
 
   return (
     <>
