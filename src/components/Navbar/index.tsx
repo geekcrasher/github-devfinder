@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Moon, SunMedium } from "lucide-react"
-import { useTheme } from "@/context/ThemContext";
+import { useTheme } from "@/context/ThemeContext";
 
 const Navbar = () => {
 
