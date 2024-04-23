@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 
-type ThemContextProviderProps = {
+type ThemeContextProviderProps = {
   children: React.ReactNode
 }
 
@@ -12,13 +12,13 @@ type ThemeContextType = {
   handleChangeTheme: () => void
 }
 
-const ThemContext = createContext<ThemeContextType | null>(null)
+const ThemeContext = createContext<ThemeContextType | null>(null)
 
 export const useTheme = () => {
-  return useContext(ThemContext) as ThemeContextType
+  return useContext(ThemeContext) as ThemeContextType
 }
 
-export const ThemContextProvider = ({ children }: ThemContextProviderProps) => {
+export const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
 
   const [darkMode, setDarkMode] = useState(true)
   const [theme, setTheme] = useState<Theme>('dark')
@@ -37,8 +37,8 @@ export const ThemContextProvider = ({ children }: ThemContextProviderProps) => {
   }
 
   return (
-    <ThemContext.Provider value={{ theme, darkMode, handleChangeTheme }}>
+    <ThemeContext.Provider value={{ theme, darkMode, handleChangeTheme }}>
       {children}
-    </ThemContext.Provider>
+    </ThemeContext.Provider>
   )
 }
